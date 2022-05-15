@@ -1,0 +1,93 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<title>Invent Signup Form Responsive Widget Template | Home :: W3layouts</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords"
+		content="Invent Signup Form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- //Meta tag Keywords -->
+	<!--/Style-CSS -->
+	<link rel="stylesheet" href="{% static 'web/css/style.css' %}" type="text/css" media="all" />
+	<!--//Style-CSS -->
+</head>
+
+<body>
+	<!-- /login-section -->
+	<section class="w3l-login-6">
+		<div class="login-hny">
+			<div class="form-content">
+				<div class="form-right">
+					<div class="overlay">
+						<div class="grid-info-form">
+							
+							<h3>Forget Password</h3>
+							<p> If you forget your user password you can reset it now</p>
+							<a href="{% url 'register'%}" class="read-more-1 btn">Reset Password</a>
+						</div>
+					
+					</div>
+				</div>
+				<div class="form-left">
+					<div class="middle">
+						<h4>Login now</h4>
+
+					</div>
+					<form action="" method="post" class="signin-form">
+					{% csrf_token %}
+							{% if messages %}
+								{% for i in messages %}
+								    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+										<script>
+											swal('{{i}}');
+										</script>
+									
+								{% endfor %}
+							{% endif %}
+							<div class="form-input">
+								<label>Name</label>
+								<input type="text" name="username" placeholder="" required />
+							</div>
+						
+							<div class="form-input">
+								<label>Password</label>
+								<input type="password" name="password" placeholder="" required />
+							</div>
+						
+							
+							<label class="container">I agree to <a href="#">Conditions</a> of Use and <a href="#">Privacy</a>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<button class="btn">Sign in</button>
+					</form>
+					<div class="copy-right text-center">
+						<p>If you don't have an account </p>
+								<a href="{% url 'register' %}" target="_blank">Signup</a>
+					 </div>
+				</div>
+				
+			</div>
+			
+		</div>
+	</section>
+	<!-- //login-section -->
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+{% extends 'new/full.html' %}
+
+{% block content %}
+    {% for i in post%}
+    <article class="media content-section">
+    <img class="rounded-cirlce article-img" src="{{i.name.profile.image.url }}">
+        <div class="media-body">
+            <div class="article-metadata">
+            <a class="mr-2" href="#">{{ i.name }}</a>
+            <small class="text-muted">{{ i.date}}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ i.title }}</a></h2>
+            <p class="article-content">{{ i.content }}</p>
+        </div>
+    </article>
+
+    {% endfor %}
+{% endblock %}
+    
+     

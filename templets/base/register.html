@@ -1,0 +1,105 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<title>Invent Signup Form Responsive Widget Template | Home :: W3layouts</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords"
+		content="Invent Signup Form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- //Meta tag Keywords -->
+	<!--/Style-CSS -->
+	<link rel="stylesheet" href="{% static 'web/css/style.css' %}" type="text/css" media="all" />
+	<!--//Style-CSS -->
+</head>
+
+<body>
+
+
+	<!-- /login-section -->
+	{% if messages %}
+			{% for i in messages %}
+				<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+						<script>
+								swal('{{i}}');
+						</script>
+									
+			{% endfor %}
+	{% endif %}
+	<section class="w3l-login-6">
+		<div class="login-hny">
+			<div class="form-content">
+				<div class="form-right">
+					<div class="overlay">
+						<div class="grid-info-form">
+							
+							
+							<h3>Login</h3>
+							<p>If you already have an account just login here</p>
+							<a href="{% url 'login'%}" class="read-more-1 btn">Already have an account</a>
+						</div>
+					
+					</div>
+				</div>
+				<div class="form-left">
+					<div class="middle">
+						<h4>Creat Your Account Now</h4>
+
+					</div>
+					<form action="" method="post" class="signin-form">
+					{% csrf_token %}
+							
+							<div class="form-input">
+								<label>Name</label>
+								<input type="text" name="username" placeholder="" required />
+							</div>
+							<div class="form-input">
+								<label>email</label>
+								<input type="email" name="email" placeholder="" required />
+							</div>
+						
+							<div class="form-input">
+								<label>Password</label>
+								<input type="password" name="password1" placeholder="" required />
+							</div>
+							<div class="form-input">
+								<label>Confirm Password</label>
+								<input type="password" name="password2" placeholder="" required />
+							</div>
+						
+							
+							<label class="container">I agree to <a href="#">Conditions</a> of Use and <a href="#">Privacy</a>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<button class="btn">Creat Account</button>
+					</form>
+					<div class="copy-right text-center">
+						<p>© 2019 Invent Signup. All rights reserved | Design by
+								<a href="http://w3layouts.com/" target="_blank">W3layouts</a></p>
+					 </div>
+				</div>
+				
+			</div>
+			
+		</div>
+	</section>
+	<!-- //login-section -->
+</body>
+
+</html>
