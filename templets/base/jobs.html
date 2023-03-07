@@ -1,5 +1,5 @@
 {% load static %}
-{% static "empo/images" as val %}
+{% static "images" as val %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -243,18 +243,19 @@
                  
                  <br>
              </div>
+             {% for i in ob %}
                 <div class="col-lg-8">
                     <div class="row">
                         <div class="col-md-6">
-                            {% for i in ob %}
+                            
                             <div class="trainer-item">
                                 <div class="image-thumb">
-                                    <img src="{{val}}/{{i.img}}" alt="">
+                                    <img src="{{empo}}/{{i.img}}" alt="">
                                 </div>
                                 <div class="down-content">
                                     <span> <sup>EXP</sup>{{i.expo}}</span>
 
-                                    <h4>{{i.job_des}}</h4>
+                                    <h4>{{i.job_dec}}</h4>
 
                                     <p>{{i.job_name}}</p>
 
@@ -263,10 +264,12 @@
                                     </ul>
                                 </div>
                             </div>
-                            {% endfor %}
+                          
+          
                         </div>
                        
             </div>
+            {% endfor %}
 
             
 

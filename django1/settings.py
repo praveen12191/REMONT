@@ -13,10 +13,15 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+from .info import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+EMAIL_USE_TLS = EMAIL_USE_TLS
+EMAIL_HOST = EMAIL_HOST
+EMAIL_HOST_USER = EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
+EMAIL_PORT = EMAIL_PORT
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -25,10 +30,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'um$@7qmy_wry%rq3o5w-vbz#zcon^duv6b@dknuleaxe=rk^rz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','sampledomain.com']
 
 
 # Application definition
@@ -50,10 +54,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'emp_reg.apps.EmpRegConfig',
     'employersdetails.apps.EmployersDetailsConfig',
+    'django_email_verification',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -150,15 +156,22 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'images')
 CRISPY_TEMPLATE_PACK ='bootstrap4'
 LOGIN_REDIRECT_URL = 'ehome'
 LOGIN_URL = 'login'
-
-
+'''
+EMAIL_ACTIVE_FIELD = 'is active'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_SERVER = 'smtp.gmail.com'
 EMAIL_POST = 587
+EMAIL_ADDRESS = 'haripraveen816@gmail.com'
+EMAIL_FROM_ADDRESS = 'haripraveen816@gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'haripraveen816@gmail.com'
-EMAIL_HOST_PASSWORD = '#'
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+EMAIL_PASSWORD = 'RavikavithA816@'
+EMAIL_MAIL_SUBJECT = 'Confirm your mail'
+EMAIL_MAIL_HTML = 'email_body.html'
+EMAIL_MAIL_PLAIN = 'mail_body.txt'
+EMAIL_PAGE_TEMPLATE = 'confirm_template.html'
+EMAIL_MAIL_DOMAIN = 'http://127.0.0.1:8000/'
 
+'''
 
 DATABASES_ROUTERS = ['routers.db_routers.AuthRouters','routers.db_routers.UserRouters']

@@ -24,8 +24,11 @@
 		<!---main--->
 			<div class="main">
 				<div class="main-section agile">
+					
 					<div class="login-form">
-						<form action="" method="post">
+						<form action="." method="POST">
+							{% csrf_token %}
+								{{form.username}}
 							<ul>
 								 <li class="text-info"> Name *</li>
 								 <li><input type="text" name="name" placeholder="" required></li>
@@ -36,6 +39,7 @@
 								 <li><input type="text" name="email" placeholder="" required></li>
 								 <div class="clear"></div>
 							 </ul>
+							 
 							 <ul>
 								 <li class="text-info">Phone Number *</li>
 								 <li><input type="text" placeholder="" required></li>
@@ -43,7 +47,7 @@
 							 </ul>
 							
 								
-							<!---start-date-piker---->
+							
 										<link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}" />
 										<script src="{% static 'js/jquery-ui.js' %}"></script>
 											<script>
@@ -51,7 +55,7 @@
 												$( "#datepicker,#datepicker1" ).datepicker();
 												});
 											</script>
-									<!---/End-date-piker---->
+									
 						
 							 <ul>
 								<li class="text-info">Destination Address *</li>
@@ -63,15 +67,14 @@
 								<li class="text-info">Additional Message :</li>
 								<li><textarea></textarea></li>
 								<div class="clear"></div>
-							</ul>
+							</ul>--->
 							<input type="submit" value="Submit">
 							<div class="clear"></div>
 						</form>
 					</div>
 				</div>
 			</div>
-			<div class="footer w3agile">
-			<p>&copy 2016 Classy Booking Form . All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+			
 		</div>
 
 		<!---main--->

@@ -1,0 +1,1 @@
+img = models.ImageField(upload_to='img')
