@@ -165,7 +165,6 @@ EMAIL_ADDRESS = 'haripraveen816@gmail.com'
 EMAIL_FROM_ADDRESS = 'haripraveen816@gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'haripraveen816@gmail.com'
-EMAIL_PASSWORD = 'RavikavithA816@'
 EMAIL_MAIL_SUBJECT = 'Confirm your mail'
 EMAIL_MAIL_HTML = 'email_body.html'
 EMAIL_MAIL_PLAIN = 'mail_body.txt'
